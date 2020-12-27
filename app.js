@@ -11,7 +11,6 @@ document.getElementById('loan-form').addEventListener('submit', function (e) {
 });
 // Display results
 function displayResults() {
-  calculateResults();
   document.getElementById('loading').style.display = 'none';
   document.getElementById('results').style.display = 'block';
 }
@@ -39,6 +38,8 @@ function calculateResults() {
 
   if (isFinite(monthly)) {
     monthlyPayment.value = monthly.toFixed(2);
+    console.log({ monthly });
+
     totalPayment.value = (monthly * calculatedPayments).toFixed(2);
     totalInterest.value = (monthly * calculatedPayments - principal).toFixed(2);
     setTimeout(displayResults, 2000);
