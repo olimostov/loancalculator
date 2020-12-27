@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Hello, world!</title>
+    <title>Loan Calculator</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -16,6 +16,12 @@
       integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
       crossorigin="anonymous"
     />
+    <style>
+      #loading,
+      #results {
+        display: none;
+      }
+    </style>
   </head>
   <body class="bg-dark">
     <div class="container">
@@ -40,6 +46,7 @@
                   <span class="input-group-addon">%</span>
                   <input
                     type="number"
+                    step="any"
                     class="form-control"
                     id="interest"
                     placeholder="Interest"
@@ -63,11 +70,11 @@
               </div>
             </form>
             <!-- LOADER -->
-            <!--
-              <div id="loading">
-                <img src="img/loading.gif" alt="">
-              </div>
-            -->
+
+            <div id="loading">
+              <img src="img/loading.gif" alt="" />
+            </div>
+
             <!-- RESULTS -->
             <div id="results" class="pt-4">
               <h5>Results</h5>
